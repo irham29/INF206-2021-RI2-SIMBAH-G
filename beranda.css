@@ -1,0 +1,28 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav {
+  width: 240px;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(33, 150, 83, 1);
+  padding: 20px;
+  transition: 0.4s;
+}
+
+.nav-link {
+  font-size: 15px;
+  color: black;
+  text-decoration: none;
+}
+
+.nav :hover {
+  color: white;
+}
+
+.isi {
+  padding: 20px 250px;
+  margin-left: 30px;
+}
