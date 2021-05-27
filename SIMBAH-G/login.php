@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">  
     
     <!-- My Css -->
     <link rel="stylesheet" href="css/login.css" />
@@ -27,19 +27,19 @@
   <!-- Form Login -->
   <body style="background-color:#219653;">
     <div class="registration-form">
-      <form action="" method="post">
+      <form action="ceklogin.php" method="POST" class="signin-form">
         <div class="form-head">
           <h3 style="font-weight: bolder;">SIMBAH-G</h3>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control item" name="email "id="email" placeholder="USERNAME" />
+          <input type="email" class="form-control item" name="email"  placeholder="USERNAME" />
         </div>
         <div class="form-group">
-          <input type="password" class="form-control item" name="password" id="password" placeholder="PASSWORD" />
+          <input type="password" class="form-control item" name="password"  placeholder="PASSWORD" />
         </div>
         <div class="form-group">
-          <a type="submit" name="login" class="btn btn-block login" href="beranda.html">LOGIN</a> <br>
-          <div class="signup text-end"><a  style="color: black;" href="register.html">DAFTAR</a></div>
+          <button name="login" class="btn btn-block login" >LOGIN</button> <br>
+          <div class="signup text-end"><a  style="color: black;" href="register.php">DAFTAR</a></div>
         </div>
       </form>
     </div>

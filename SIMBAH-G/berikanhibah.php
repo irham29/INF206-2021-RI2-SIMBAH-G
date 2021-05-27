@@ -12,19 +12,10 @@
     </head>
     
     <body>
-        <!-- Awal Navbar -->
-        <nav class="nav flex-column">
-            <h2>SIMBAH-G</h2><br>
-            <a class="nav-link akun" aria-current="page" href="akun.html">Akun</a><br>
-            <a class="nav-link beranda" href="beranda.html">Beranda</a>
-            <a class="nav-link kebutuhan" href="kebutuhan.html">Kebutuhan Gampong</a>
-            <a class="nav-link history" href="history.html">History</a>
-            <a class="nav-link hibah" href="berikanhibah.html">Berikan Hibah</a>
-            <a class="nav-link pengaturan" href="pengaturan.html">Pengaturan</a>
-            <a class="nav-link support" href="support.html">Support</a><br>
-            <a class="nav-link keluar" href="login.html">Keluar</a>
-          </nav>
-        <!-- Akhir Navbar -->
+        
+        <!-- Impor Komponen Sidebar -->
+        <?php include 'sidebar.php'; ?>
+        
         
         <!-- Awal Isi -->
         <div class="isi">
@@ -37,7 +28,8 @@
                           <li><a class="dropdown-item" href="#">Another action</a></li>
                           <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
-                      </div>
+                    </div>
+                    
                     <tr>
                         <td>Nama</td>
                         <td><input type="text" name="nama"></td>
@@ -86,6 +78,34 @@
             </div>
         </div>  
         <!-- Akhir Isi -->
+        
+        <?php
+        if(isset($_POST ['submit'])){
+            $nim = $_POST['nim'];
+            $nama = $_POST['nama'];
+            $jurusan = $_POST['jurusan'];
+            $alamat = $_POST['alamat'];
+            $telp = $_POST['telp'];
+            
+            $sqlGet = "SELECT * FROM mahasiswa WHERE nim='$nim'";
+            $queryGet = mysqli_query($conn, $sqlGet);
+            $cek = mysqli_num_rows($queryGet);
+            
+            $sqlInsert = "INSERT INTO mahasiswa(nim, nama, jurusan, alamat, telp)
+                        VALUES ('$nim', '$nama', '$jurusan', '$alamat', '$telp')";
+                        
+            $queryInsert = mysqli_query($conn, $sqlInsert);
+            
+            if (isset($sqlInsert) && $cek <= 0) {
+                echo "
+                <div class='alert alert-success mt-3'>Data Berhasil ditambahkan</div>
+                ";
+            } else if ($cek > 0 ){
+                echo"<div class='alert alert-danger mt-3'>Data Gagal ditambahkan</div>
+                ";
+            }
+        }
+        ?>
                 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     </body>
