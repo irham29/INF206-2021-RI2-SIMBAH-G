@@ -1,5 +1,5 @@
 <!-- Modal Hapus -->
-<div class="modal fade" id="modal_hapus">
+<div class="modal fade" id="modal_hapus<?php echo $record['id']; ?>">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
     
@@ -17,7 +17,7 @@
       <!-- Footer Modal Hapus-->
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-        <a href="hapus.php?id=" class="btn btn-success">Hapus</a>
+        <a href="hapus.php?id=<?php echo $record['id']; ?>" id="btn_hapus" class="btn btn-success">Hapus</a>
       </div>
 
     </div>

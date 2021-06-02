@@ -54,7 +54,7 @@
                   </button>
                     
                   <!-- Tombol Hapus -->
-                  <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#modal_hapus">
+                  <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#modal_hapus<?php echo $record['id']; ?>">
                     <span class="material-icons">delete</span>
                   </button>
                 </td>
