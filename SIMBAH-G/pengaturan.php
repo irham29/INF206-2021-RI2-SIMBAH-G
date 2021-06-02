@@ -1,3 +1,5 @@
+<?php require 'config.php' ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -185,11 +187,21 @@
               </tr>
             </thead>
             <tbody >
+            
+            <?php
+              $mysqli = new mysqli($hostname, $username, $password, $dbname);
+
+              $select_records = "SELECT * FROM barang";
+              $records = $mysqli->query($select_records);
+
+              while($record = $records->fetch_assoc()) {
+            ?>
+
               <tr>
-                <td>Sarpras</td>
-                <td>Piring</td>
-                <td>10</td>
-                <td>1</td>
+                <td><?php echo $record['kategori']; ?></td>
+                <td><?php echo $record['nama']; ?></td>
+                <td><?php echo $record['target']; ?></td>
+                <td><?php echo $record['tercapai']; ?></td>
                 <td>
                   <!-- Tombol Edit -->
                   <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#modal_edit">
