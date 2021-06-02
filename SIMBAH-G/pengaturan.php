@@ -11,138 +11,9 @@
   </head>
   <body>
 
-    <?php include 'sidebar.php' ?>
+    <?php include 'sidebar.php'; ?>
     
-    <!-- Modal Tambah -->
-    <div class="modal fade" id="modal_tambah">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-        
-          <!-- Header Modal Tambah-->
-          <div class="modal-header">
-            <h4 class="modal-title">Tambah Barang</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-          
-          <!-- Body Modal Tambah-->
-          <div class="modal-body">
-
-            <form action="tambah.php" method="POST" role="form">
-            
-            <!-- Kategori -->
-            <div class="form-group">
-              <div class="row">
-              <label class="col-sm-3 control-label text-right">Kategori</label>
-                <div class="col-sm-8">
-                  <select name="tambah_kategori" class="form-control select2" style="width: 100%;">
-                    <option value="Pilih Kategori" selected="selected">Pilih Kategori</option>
-                    <option value="Sarpras">Sarpras</option>
-                    <option value="Meunasah">Meunasah</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Nama Barang -->
-            <div class="form-group">
-              <div class="row">
-                <label class="col-sm-3 control-label text-right">Nama Barang</label>         
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" name="tambah_nama_barang" placeholder="Nama Barang">
-                </div>
-              </div>
-            </div>
-
-            <!-- Target -->
-            <div class="form-group">
-              <div class="row">
-                <label class="col-sm-3 control-label text-right">Target</label>
-                <div class="col-sm-8">
-                  <input type="number" class="form-control" name="tambah_target" placeholder="Target">
-                </div>
-              </div>
-            </div>
-            
-          </div>
-          
-          <!-- Footer Modal Tambah-->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-            
-            <!-- Tombol Tambah -->
-            <button type="button submit" name='btn_tambah' class="btn btn-success">
-              Tambah
-            </button>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal Edit -->
-    <div class="modal fade" id="modal_edit">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-        
-          <!-- Header Modal Edit-->
-          <div class="modal-header">
-            <h4 class="modal-title">Edit Barang</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-          
-          <!-- Body Modal Edit-->
-          <div class="modal-body">
-
-            <form action="" method="post" role="form">
-            
-            <!-- Kategori -->
-            <div class="form-group">
-              <div class="row">
-              <label class="col-sm-3 control-label text-right">Kategori <span class="text-red">*</span></label>
-                <div class="col-sm-8"><select name="role" class="form-control select2" style="width: 100%;">
-                  <option value="User" selected="selected">-- Pilih Kategori --</option>
-                  <option value="admin">Sarpras</option>
-                  <option value="staff">Meunasah</option>
-                </select>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Nama Barang -->
-            <div class="form-group">
-              <div class="row">
-              <label class="col-sm-3 control-label text-right">Nama Barang <span class="text-red">*</span></label>         
-              <div class="col-sm-8"><input type="text" class="form-control" name="nama_barang" placeholder="Nama Barang" value=""></div>
-              </div>
-            </div>
-
-            <!-- Target -->
-            <div class="form-group">
-              <div class="row">
-              <label class="col-sm-3 control-label text-right">Target <span class="text-red">*</span></label>
-              <div class="col-sm-8"><input type="text" class="form-control" name="target" placeholder="Target" value=""></div>
-              </div>
-            </div>
-            
-            <!-- Tercapai -->
-             <div class="form-group">
-              <div class="row">
-              <label class="col-sm-3 control-label text-right">Tercapai <span class="text-red">*</span></label>
-              <div class="col-sm-8"><input type="text" class="form-control" name="tercapai" placeholder="Tercapai" value=""></div>
-              </div>
-            </div>
-            
-          </div>
-          
-          <!-- Footer Modal Edit-->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-            <button type="button" class="btn btn-success">Edit</button>
-          </div>
-          
-        </div>
-      </div>
-    </div>
+    <?php include 'modal_tambah.php'; ?>
 
     <!-- Modal Hapus -->
     <div class="modal fade" id="modal_hapus">
@@ -188,14 +59,14 @@
             </thead>
             <tbody >
             
-            <?php
-              $mysqli = new mysqli($hostname, $username, $password, $dbname);
+              <?php
+                $mysqli = new mysqli($hostname, $username, $password, $dbname);
 
-              $select_records = "SELECT * FROM barang";
-              $records = $mysqli->query($select_records);
+                $select_records = "SELECT * FROM barang";
+                $records = $mysqli->query($select_records);
 
-              while($record = $records->fetch_assoc()) {
-            ?>
+                while($record = $records->fetch_assoc()) {
+              ?>
 
               <tr>
                 <td><?php echo $record['kategori']; ?></td>
@@ -204,7 +75,7 @@
                 <td><?php echo $record['tercapai']; ?></td>
                 <td>
                   <!-- Tombol Edit -->
-                  <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#modal_edit">
+                  <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#modal_edit<?php echo $record['id']; ?>">
                     <span class="material-icons">edit</span>
                   </button>
                     
@@ -214,6 +85,12 @@
                   </button>
                 </td>
               </tr>
+
+              <?php 
+                include 'modal_edit.php'; 
+                }
+              ?>
+            
             </tbody>
           </table>
         </div>
