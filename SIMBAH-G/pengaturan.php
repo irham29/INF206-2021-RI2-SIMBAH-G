@@ -25,17 +25,18 @@
           <!-- Body Modal Tambah-->
           <div class="modal-body">
 
-            <form action="" method="post" role="form">
+            <form action="tambah.php" method="POST" role="form">
             
             <!-- Kategori -->
             <div class="form-group">
               <div class="row">
-              <label class="col-sm-3 control-label text-right">Kategori <span class="text-red">*</span></label>
-                <div class="col-sm-8"><select name="role" class="form-control select2" style="width: 100%;">
-                  <option value="User" selected="selected">-- Pilih Kategori --</option>
-                  <option value="admin">Sarpras</option>
-                  <option value="staff">Meunasah</option>
-                </select>
+              <label class="col-sm-3 control-label text-right">Kategori</label>
+                <div class="col-sm-8">
+                  <select name="tambah_kategori" class="form-control select2" style="width: 100%;">
+                    <option value="Pilih Kategori" selected="selected">Pilih Kategori</option>
+                    <option value="Sarpras">Sarpras</option>
+                    <option value="Meunasah">Meunasah</option>
+                  </select>
                 </div>
               </div>
             </div>
@@ -43,16 +44,20 @@
             <!-- Nama Barang -->
             <div class="form-group">
               <div class="row">
-              <label class="col-sm-3 control-label text-right">Nama Barang <span class="text-red">*</span></label>         
-              <div class="col-sm-8"><input type="text" class="form-control" name="nama_barang" placeholder="Nama Barang" value=""></div>
+                <label class="col-sm-3 control-label text-right">Nama Barang</label>         
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" name="tambah_nama_barang" placeholder="Nama Barang">
+                </div>
               </div>
             </div>
 
             <!-- Target -->
             <div class="form-group">
               <div class="row">
-              <label class="col-sm-3 control-label text-right">Target <span class="text-red">*</span></label>
-              <div class="col-sm-8"><input type="text" class="form-control" name="target" placeholder="Target" value=""></div>
+                <label class="col-sm-3 control-label text-right">Target</label>
+                <div class="col-sm-8">
+                  <input type="number" class="form-control" name="tambah_target" placeholder="Target">
+                </div>
               </div>
             </div>
             
@@ -61,7 +66,11 @@
           <!-- Footer Modal Tambah-->
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-            <button type="button" class="btn btn-success">Tambah</button>
+            
+            <!-- Tombol Tambah -->
+            <button type="button submit" name='btn_tambah' class="btn btn-success">
+              Tambah
+            </button>
           </div>
           
         </div>
@@ -163,8 +172,6 @@
       <div class="row">
         <h1>Pengaturan</h1>
       
-        <!-- Open connection to DB -->
-
         <!-- Tabel Kebutuhan Gampong -->
         <div class="table-responsive">
           <table class="table table-striped">
