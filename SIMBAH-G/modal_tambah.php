@@ -17,7 +17,7 @@
         <!-- Kategori -->
         <div class="form-group">
           <div class="row">
-          <label class="col-sm-3 control-label text-right">Kategori</label>
+          <label class="col-sm-3 control-label text-right font-weight-bold">Kategori</label>
             <div class="col-sm-8">
               <select name="tambah_kategori" class="form-control select2" style="width: 100%;">
                 <option value="Pilih Kategori" selected="selected">Pilih Kategori</option>
@@ -31,7 +31,7 @@
         <!-- Nama Barang -->
         <div class="form-group">
           <div class="row">
-            <label class="col-sm-3 control-label text-right">Nama Barang</label>         
+            <label class="col-sm-3 control-label text-right font-weight-bold">Nama Barang</label>         
             <div class="col-sm-8">
               <input type="text" class="form-control" name="tambah_nama_barang" placeholder="Nama Barang">
             </div>
@@ -41,7 +41,7 @@
         <!-- Target -->
         <div class="form-group">
           <div class="row">
-            <label class="col-sm-3 control-label text-right">Target</label>
+            <label class="col-sm-3 control-label text-right font-weight-bold">Target</label>
             <div class="col-sm-8">
               <input type="number" class="form-control" name="tambah_target" placeholder="Target">
             </div>
