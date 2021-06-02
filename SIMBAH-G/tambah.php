@@ -25,9 +25,9 @@
                     '$tercapai'
                   )";
   
-  $mysqli->query($sql_tambah);
+    $mysqli->query($sql_tambah);
+
+    header('location: pengaturan.php');
   }
-  
-  header('location: pengaturan.php');
 
 ?>
