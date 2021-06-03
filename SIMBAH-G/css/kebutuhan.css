@@ -9,7 +9,6 @@ body {
   position: fixed;
   background-color: rgba(33, 150, 83, 1);
   padding: 20px;
-  transition: 0.4s;
 }
 
 .nav-link {
