@@ -18,7 +18,7 @@
     <!-- Font Montserrat-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     
-    <title>SIMBAH-G | Sistem Informasi Hibah Gampong</title>
+    <title>Halaman Login | SIMBAH-G</title>
     
     <!-- Judul -->
     <h1 style="color: white; font-family: montserrat; font-weight: bolder;">SISTEM INFORMASI HIBAH GAMPONG</h1>
@@ -32,10 +32,10 @@
           <h3 style="font-weight: bolder;">SIMBAH-G</h3>
         </div>
         <div class="form-group">
-          <input type="email" class="form-control item" name="email"  placeholder="USERNAME" />
+          <input type="email" class="form-control item" name="email"  placeholder="E-MAIL"/>
         </div>
         <div class="form-group">
-          <input type="password" class="form-control item" name="password"  placeholder="PASSWORD" />
+          <input type="password" class="form-control item" name="password"  placeholder="PASSWORD"/>
         </div>
         <div class="form-group">
           <button name="login" class="btn btn-block login" >LOGIN</button> <br>

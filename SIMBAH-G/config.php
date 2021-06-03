@@ -1,13 +1,14 @@
-<?php
+<?php 
 
-/**
- * Konfigurasi untuk koneksi Database
- * 
- */
+$server = "localhost";
+$userserve = "root";
+$passserve = "";
+$database = "simbahg";
 
-  $hostname = "localhost";
-  $username = "admin";
-  $password = "1234qwer";
-  $dbname = "simbah_g";
+$conn = mysqli_connect($server, $userserve, $passserve, $database);
+
+if (!$conn){
+    echo "Connection Failed!!!";
+}
 
 ?>
