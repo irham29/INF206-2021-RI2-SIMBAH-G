@@ -48,7 +48,7 @@ if($_SESSION['level']=="0"){
               <?php
                 include 'update_tercapai.php';
                 
-                $mysqli = new mysqli($hostname, $username, $password, $dbname);
+                $mysqli = new mysqli($server, $userserve, $passserve, $database);
 
                 $select_records = "SELECT * FROM barang";
                 $records = $mysqli->query($select_records);

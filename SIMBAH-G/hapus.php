@@ -5,7 +5,7 @@
 
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-    $mysqli = new mysqli($hostname, $username, $password, $dbname);
+    $mysqli = new mysqli($server, $userserve, $passserve, $database);
     
     $sql_hapus = "DELETE FROM barang
                   WHERE id='$id_barang'";

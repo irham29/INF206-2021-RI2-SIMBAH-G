@@ -9,7 +9,7 @@
     
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-    $mysqli = new mysqli($hostname, $username, $password, $dbname);
+    $mysqli = new mysqli($server, $userserve, $passserve, $database);
 
     $sql_tambah = "INSERT INTO barang (
                     kategori,

@@ -1,7 +1,7 @@
 <?php
   require 'config.php';
 
-  $mysqli = new mysqli($hostname, $username, $password, $dbname);
+  $mysqli = new mysqli($server, $userserve, $passserve, $database);
 
   $select_records = 
     "SELECT id, B.kategori, nama, target, SUM(jumlah) jumlah
