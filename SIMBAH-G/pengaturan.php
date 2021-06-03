@@ -34,6 +34,8 @@
             <tbody >
             
               <?php
+                include 'update_tercapai.php';
+                
                 $mysqli = new mysqli($hostname, $username, $password, $dbname);
 
                 $select_records = "SELECT * FROM barang";
