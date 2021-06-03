@@ -1,0 +1,59 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav {
+  width: 240px;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(33, 150, 83, 1);
+  padding: 20px;
+}
+
+.nav-link {
+  font-size: 15px;
+  color: black;
+  text-decoration: none;
+}
+
+.nav :hover {
+  color: white;
+}
+
+.isi {
+  padding: 20px 250px;
+  margin-left: 30px;
+}
+
+p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+td {
+  padding: 10px;
+  font-size: 15px;
+}
+
+.isi1 p {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: unset;
+}
+
+.simpan {
+  background-color: green;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 30px;
+  cursor: pointer;
+  margin: 20px;
+  margin-left: 24%;
+}
+
+/* @media (max-width: 584px) {
+  
+} */
