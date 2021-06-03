@@ -1,4 +1,16 @@
-<?php require 'config.php' ?>
+<?php 
+session_start();
+
+require 'config.php';
+
+if($_SESSION['level']=="0"){
+  echo "<script>
+				alert('Silahkan Login Sebagai Admin!!!');
+		    </script>";
+   header("Location:beranda.php?pesan=gagal");
+   
+}
+?>
 
 <!doctype html>
 <html lang="en">
